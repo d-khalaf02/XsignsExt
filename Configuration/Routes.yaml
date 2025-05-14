@@ -1,0 +1,10 @@
+routeEnhancers:
+    XsignsApi:
+        type: Extbase
+        extension: Xsigns
+        plugin: XsignsPlugin
+        routes:
+            - { routePath: '/api/import', _controller: 'JsonReceiver::import' }
+            - { routePath: '/api/amenity', _controller: 'Amenity::insert' }
+        defaultController: 'Amenity::render'
+        aspects: {}

@@ -1,0 +1,17 @@
+{
+    "name": "xsigns/xsigns-ext",
+    "type": "typo3-cms-extension",
+    "description": "JSON-API für Amenities",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Xsigns\\XsignsExt\\": "Classes/",
+            "Symfony\\Component\\": "../../../vendor/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "xsigns"
+        }
+    }
+}

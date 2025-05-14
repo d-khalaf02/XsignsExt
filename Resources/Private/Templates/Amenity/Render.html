@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+            <f:if condition="{amenities}">
+                <h3>In Der Datenbank Gespeicherte Amenities:</h3>
+                <f:for each="{amenities}" as="amenity">
+                    <h3>Amenity: {amenity.id}</h3>
+
+                    <ul>
+                        <li>Icon: {amenity.icon}</li>
+                        <li>Id: {amenity.id}</li>
+                        <li>Name: {amenity.name}</li>
+                    </ul>
+                </f:for>
+            </f:if>
+        </div>
+    </body>
+</html>

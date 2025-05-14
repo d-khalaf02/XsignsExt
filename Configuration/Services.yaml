@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Xsigns\XsignsExt\:
+        resource: '../Classes'
+        exclude:
+            - '../Classes/Domain/Model'
+            - '../Classes/Application/Abstractions'
+            - '../Classes/Application/**/DTOs/*'
+        public: true
+
+    Xsigns\XsignsExt\Application\Amenities\AmenitiesService:
+        arguments:
+            # üblicherweise ValidatorResolver und dein Repository o.ä.
+            $validatorResolver: '@TYPO3\CMS\Extbase\Validation\ValidatorResolver'
+            $amenityRepository: '@Xsigns\XsignsExt\Domain\Repository\AmenityRepository'

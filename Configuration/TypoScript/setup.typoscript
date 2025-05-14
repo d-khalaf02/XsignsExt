@@ -1,0 +1,55 @@
+plugin.tx_xsignsplugin {
+    view {
+        templateRootPaths.0 = EXT:xsigns/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:xsigns/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:xsigns/Resources/Private/Layouts/
+    }
+}
+
+page = PAGE
+page {
+    typeNum = 0
+    config.contentObjectExceptionHandler = 0
+    config {
+        disableAllHeaderCode = 1
+        disablePrefixComment = 1
+        xhtml_cleaning       = 0
+        admPanel             = 0
+        no_cache             = 1
+    }
+
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Xsigns
+        pluginName = XsignsPlugin
+        vendorName = Xsigns
+        controller = Amenity
+        action = render
+    }
+}
+
+json = PAGE
+json {
+    typeNum = 999
+    config {
+        disableAllHeaderCode = 1
+        disablePrefixComment = 1
+        xhtml_cleaning       = 0
+        admPanel             = 0
+        no_cache             = 1
+        additionalHeaders {
+            10.header = Content-Type:application/json; charset=utf-8
+        }
+    }
+
+    10 = USER_INT
+    10 {
+        userFunc      = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName    = Xsigns
+        extensionName = Xsigns
+        pluginName    = XsignsPlugin
+        controller    = Amenity
+        action        = insert
+    }
+}
